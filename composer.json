@@ -1,0 +1,23 @@
+{
+    "name": "mackensiealvarezz/tdameritrade-laravel",
+    "description": "API Package for TD amteritrade",
+    "authors": [{
+        "name": "Mackensie Alvarez",
+        "email": "mackensiealvarez@gmail.com"
+    }],
+    "require": {
+        "guzzlehttp/guzzle": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mackensiealvarezz\\Tdameritrade\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mackensiealvarezz\\Tdameritrade\\TdameritradeServiceProvider"
+            ]
+        }
+    }
+}
