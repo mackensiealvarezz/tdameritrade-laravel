@@ -1,6 +1,8 @@
 {
     "name": "mackensiealvarezz/tdameritrade-laravel",
     "description": "TD Ameritrade API Package For Laravel",
+    "license": "MIT",
+    "readme": "README.md",
     "authors": [{
         "name": "Mackensie Alvarez",
         "email": "mackensiealvarez@gmail.com"
