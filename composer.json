@@ -1,6 +1,6 @@
 {
     "name": "mackensiealvarezz/tdameritrade-laravel",
-    "description": "API Package for TD amteritrade",
+    "description": "TD Ameritrade API Package For Laravel",
     "authors": [{
         "name": "Mackensie Alvarez",
         "email": "mackensiealvarez@gmail.com"
