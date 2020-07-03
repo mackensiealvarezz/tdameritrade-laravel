@@ -28,7 +28,7 @@ class Orders extends Api
 
     public function put(string $account_id, array $order)
     {
-        return $this->client->post('/accounts/' . $account_id . '/orders',[
+        return $this->client->postWithAuth('/accounts/' . $account_id . '/orders',[
             'json'=>$order
         ]);
     }
