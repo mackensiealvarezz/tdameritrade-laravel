@@ -1,5 +1,4 @@
-![Continuous Integration](https://github.com/mackensiealvarezz/tdameritrade-laravel/workflows/Continuous%20Integration/badge.svg)
-
+![Continuous Integration](https://github.com/mackensiealvarezz/tdameritrade-laravel/workflows/Continuous%20Integration/badge.svg?branch=master)
 # TD Ameritrade API for Laravel
 
 This package is a wrapper for the TD Ameritrade API. You will need a [developer account](https://developer.tdameritrade.com/) to use this API.
