@@ -31,7 +31,7 @@ class TdameritradeTest extends TestCase
     {
 
         $client = new Tdameritrade('access_token', 'refresh_token');
-        $account = $client->accounts()->get('s');
+        $account = $client->instruments()->get('');
         $this->assertTrue(true);
     }
 }

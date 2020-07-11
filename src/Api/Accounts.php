@@ -4,16 +4,12 @@ namespace Mackensiealvarezz\Tdameritrade\Api;
 
 use Mackensiealvarezz\Tdameritrade\Api\Api;
 
-/**
- * @method void list(string $fields = null)
- * @method void get(string  $account_id)
- */
 class Accounts extends Api
 {
 
     /**
      * list
-     *
+     * Account balances, positions, and orders for all linked accounts.
      * @param  mixed $fields
      * @return void
      */
@@ -27,7 +23,7 @@ class Accounts extends Api
 
     /**
      * get
-     *
+     * Account balances, positions, and orders for a specific account.
      * @param  string $account_id
      * @return void
      */
