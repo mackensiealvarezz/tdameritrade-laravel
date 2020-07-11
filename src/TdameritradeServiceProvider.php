@@ -19,8 +19,10 @@ class TdameritradeServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(Tdameritrade::class, function () {
+        $this->app->bind('tdameritrade', function () {
             return new Tdameritrade();
         });
+
+        $this->mergeConfigFrom(__DIR__ . '/../config/tdameritrade.php', 'tdameritrade');
     }
 }

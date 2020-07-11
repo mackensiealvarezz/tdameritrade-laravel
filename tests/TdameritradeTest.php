@@ -8,11 +8,11 @@ use Orchestra\Testbench\TestCase;
 
 class TdameritradeTest extends TestCase
 {
-
     /** @test */
     public function it_returns_access_token_and_refresh_token()
     {
-        $client  =  Tdameritrade::create('access_token', 'refresh_token');
+
+        $client = new Tdameritrade('access_token', 'refresh_token');
         $this->assertEquals('access_token', $client->getAccessToken());
         $this->assertEquals('refresh_token', $client->getRefreshToken());
     }
@@ -24,5 +24,14 @@ class TdameritradeTest extends TestCase
         Config::set('tdameritrade.callback', 'callback');
         Config::set('tdameritrade.key', 'key');
         $this->assertEquals(Tdameritrade::generateOAuth(), "https://auth.tdameritrade.com/auth?response_type=code&redirect_uri=" . config('tdameritrade.callback') . "&client_id=" . config('tdameritrade.key') . "%40AMER.OAUTHAP");
+    }
+
+    /** @test */
+    public function it_returns_accounts_class()
+    {
+
+        $client = new Tdameritrade('access_token', 'refresh_token');
+        $account = $client->accounts()->get('s');
+        $this->assertTrue(true);
     }
 }

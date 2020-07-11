@@ -45,7 +45,7 @@ class Price extends Api
     public function quotes(array $symbols)
     {
         return $this->client->getWithAuth('/marketdata/quotes', [
-            'query' => ['symbol'=>implode(',', $symbols)]
+            'query' => ['symbol' => implode(',', $symbols)]
         ]);
     }
 }

@@ -6,25 +6,35 @@ namespace Mackensiealvarezz\Tdameritrade;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
-use Mackensiealvarezz\Tdameritrade\Api\Accounts;
 
+/**
+ * @method Api\Accounts accounts() Account balances, positions, and orders for all linked accounts.
+ * @method Api\Instruments instruments() Search for instrument and fundamental data
+ * @method Api\Makert market() Operating hours of markets
+ * @method Api\Movers movers() Retrieve mover information by index symbol, direction type and change
+ * @method Api\Options options() Get Option Chains for optionable symbols
+ * @method Api\Orders orders() All orders for a specific account
+ * @method Api\Price price() Historical price data for charts
+ * @method Api\Transactions transactions() APIs to access transaction history on the account
+ * @method string getAccessToken() Get the current access token
+ * @method string getRefreshToken() Get the current Refresh Token
+ * @method static string generateOAuth() Generate a OAuth Link
+ * @method static \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse  redirectOAuth() Redirect to the Oauth Link
+ * @method  mixed refreshToken() Refresh the current access token using the refresh token
+ * @method static mixed createAccessToken(string $code = null) Allows you to create an access token using the code given from Oauth
+ */
 class Tdameritrade
 {
     const BASE_URL = "https://api.tdameritrade.com";
     const API_VER = "v1";
 
-    private $access_token;
-    private $refresh_token;
+    protected $access_token;
+    protected $refresh_token;
 
     public function  __construct($access_token = null, $refresh_token = null)
     {
         $this->access_token = $access_token;
         $this->refresh_token = $refresh_token;
-    }
-
-    public static function create($access_token = null, $refresh_token = null)
-    {
-        return new static($access_token, $refresh_token);
     }
 
     public function getAccessToken()
@@ -36,7 +46,6 @@ class Tdameritrade
     {
         return $this->refresh_token;
     }
-
 
     public static function generateOAuth()
     {
@@ -126,6 +135,7 @@ class Tdameritrade
         $class =  static::getNamespace() . ucfirst($method);
         return new $class($this);
     }
+
 
     public static function getNamespace()
     {

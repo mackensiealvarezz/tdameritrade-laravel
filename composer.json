@@ -25,7 +25,10 @@
         "laravel": {
             "providers": [
                 "Mackensiealvarezz\\Tdameritrade\\TdameritradeServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Tdameritrade": "Mackensiealvarezz\\Tdameritrade\\Facades\\TdameritradeFacades"
+            }
         }
     },
     "require-dev": {
