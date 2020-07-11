@@ -40,7 +40,7 @@ To create a OAuth URL, you will need to use:
 To refresh the token and create another access_token.
 
     //Create client 
-    $client = Tdameritrade::create($access_token, $refresh_token);
+    $client =  new Tdameritrade('access_token', 'refresh_token');
     //Refresh token
     $response = $client->refreshToken();
 
@@ -55,7 +55,7 @@ The package is written to use every class inside of **/src/api** as a function.
 This will return a list of all the accounts
 ```
 //Create client
-$client  =  Tdameritrade::create($access_token, $refresh_token);
+$client =  new Tdameritrade('access_token', 'refresh_token');
 $accounts = $client->accounts()->list();
 ```
 
@@ -64,7 +64,7 @@ $accounts = $client->accounts()->list();
 This will return all the information for one account. **Requires account_id**
 ```
 //Create client
-$client  =  Tdameritrade::create($access_token, $refresh_token);
+$client =  new Tdameritrade('access_token', 'refresh_token');
 $accounts = $client->accounts()->get('account_id');
 ```
 
@@ -75,7 +75,7 @@ $accounts = $client->accounts()->get('account_id');
 This will return a list of tickers based on the symbol entered
 ```
 //Create client
-$client  =  Tdameritrade::create($access_token, $refresh_token);
+$client =  new Tdameritrade('access_token', 'refresh_token');
 //Response
 $response = $client->instruments()->search('TESLA');
 ```
@@ -85,7 +85,7 @@ $response = $client->instruments()->search('TESLA');
 This wil return one ticker information
 ```
 //Create client
-$client  =  Tdameritrade::create($access_token, $refresh_token);
+$client =  new Tdameritrade('access_token', 'refresh_token');
 //Response
 $accounts = $client->instruments()->get('TSLA');
 ```
@@ -97,7 +97,7 @@ $accounts = $client->instruments()->get('TSLA');
 This will return a list of all the different market hours
 ```
 //Create client
-$client  =  Tdameritrade::create($access_token, $refresh_token);
+$client =  new Tdameritrade('access_token', 'refresh_token');
 //Response
 $response = $client->market()->list();
 ```
@@ -107,7 +107,7 @@ $response = $client->market()->list();
 This wil return one market information
 ```
 //Create client
-$client  =  Tdameritrade::create($access_token, $refresh_token);
+$client =  new Tdameritrade('access_token', 'refresh_token');
 //Response
 $response = $client->market()->get('SPY.X');
 ```
@@ -120,7 +120,7 @@ $response = $client->market()->get('SPY.X');
 This wil return a list of symbols that are moving
 ```
 //Create client
-$client  =  Tdameritrade::create($access_token, $refresh_token);
+$client =  new Tdameritrade('access_token', 'refresh_token');
 //Response
 $response = $client->movers()->get('SPY.X', 'up', 'percent');
 ```
@@ -132,9 +132,9 @@ $response = $client->movers()->get('SPY.X', 'up', 'percent');
 This will return a list of quotes for the ticker
 ```
 //Create client
-$client  =  Tdameritrade::create($access_token, $refresh_token);
+$client =  new Tdameritrade('access_token', 'refresh_token');
 //Response
-$response = $client->price()->history('TSLA', 'end_date', 'start_date');
+$response = $client->price()->history('TSLA', Carbon::now(), Carbon::now());
 ```
 
 ### Get Quote
@@ -142,7 +142,7 @@ $response = $client->price()->history('TSLA', 'end_date', 'start_date');
 This wil return the quote for one ticker
 ```
 //Create client
-$client  =  Tdameritrade::create($access_token, $refresh_token);
+$client =  new Tdameritrade('access_token', 'refresh_token');
 //Response
 $response = $client->price()->quote('TSLA');
 ```
@@ -152,7 +152,7 @@ $response = $client->price()->quote('TSLA');
 This wil return the quote for multiple tickers
 ```
 //Create client
-$client  =  Tdameritrade::create($access_token, $refresh_token);
+$client =  new Tdameritrade('access_token', 'refresh_token');
 //Response
 $response = $client->price()->quotes(['AAPL', 'FB']);
 ```

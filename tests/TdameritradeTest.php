@@ -41,7 +41,7 @@ class TdameritradeTest extends TestCase
     public function testReturnsMakert()
     {
         $client = new Tdameritrade('access_token', 'refresh_token');
-        $this->assertInstanceOf(Market::class, $client->makert());
+        $this->assertInstanceOf(Market::class, $client->market());
     }
 
     public function testReturnsMovers()
