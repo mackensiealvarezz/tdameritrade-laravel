@@ -27,6 +27,17 @@ class Tdameritrade
         return new static($access_token, $refresh_token);
     }
 
+    public function getAccessToken()
+    {
+        return $this->access_token;
+    }
+
+    public function getRefreshToken()
+    {
+        return $this->refresh_token;
+    }
+
+
     public static function generateOAuth()
     {
         return "https://auth.tdameritrade.com/auth?response_type=code&redirect_uri=" . config('tdameritrade.callback') . "&client_id=" . config('tdameritrade.key') . "%40AMER.OAUTHAP";

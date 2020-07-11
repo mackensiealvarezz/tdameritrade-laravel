@@ -1,6 +1,7 @@
 {
     "name": "mackensiealvarezz/tdameritrade-laravel",
     "description": "TD Ameritrade API Package For Laravel",
+    "type": "library",
     "license": "MIT",
     "readme": "README.md",
     "authors": [{
@@ -15,11 +16,20 @@
             "Mackensiealvarezz\\Tdameritrade\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Mackensiealvarezz\\Tdameritrade\\Tests\\": "tests/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
                 "Mackensiealvarezz\\Tdameritrade\\TdameritradeServiceProvider"
             ]
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.2",
+        "orchestra/testbench": "^5.3"
     }
 }
