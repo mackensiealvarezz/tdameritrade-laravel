@@ -80,6 +80,21 @@ class Tdameritrade
         }
     }
 
+    public function postWithAuth(string $path, array $data = [])
+    {
+        $client = new Client([
+            'base_uri' => SELF::BASE_URL,
+            'headers'  => ['Authorization' => 'Bearer ' . $this->access_token]
+        ]);
+
+        try {
+            $res = $client->request('post', SELF::API_VER . $path, $data);
+            return json_decode($res->getBody(), true);
+        } catch (GuzzleException $e) {
+            throw new Exception($e->getMessage());
+        }
+    }
+
     public function getWithAuth(string $path, array $data = [])
     {
         $client = new Client([
